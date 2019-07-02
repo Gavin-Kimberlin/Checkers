@@ -1,7 +1,8 @@
 import $ from 'jquery';
 export default class Player{
-  constructor(name, symbol){
+  constructor(name, symbol, direction){
     this.pieces;
+    this.direction = direction;
     if(name === '1'){
       this.pieces = [[1,0],[1,2],[1,4],[1,6],
       [2,1],[2,3],[2,5],[2,7],
@@ -28,9 +29,9 @@ export default class Player{
     }, this)
   }
 
-  movePiece(currentIndex, moveIndex){
-    this.pieces.push(moveIndex);
-    this.pieces.remove(this.pieces.indexOf(currentIndex));
+  movePlayer(currentIndex, moveIndex){
+    // this.pieces.push(moveIndex);
+    // this.pieces.remove(this.pieces.indexOf(currentIndex));
     $('#' + currentIndex[0] + currentIndex[1]).text('');
     $('#' + moveIndex[0] + moveIndex[1]).text(this.symbol);
   }

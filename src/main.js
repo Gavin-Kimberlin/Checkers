@@ -25,5 +25,5 @@ $(document).ready(function(){
       i += 1;
   };
 
-      debugger
+      // debugger
 });
